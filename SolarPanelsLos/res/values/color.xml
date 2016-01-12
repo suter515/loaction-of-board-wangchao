@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_right_container">#FFFFFF</color>
+    <color name="bg_left_container">#E6E6E6</color>
+    <color name="bg_left_line">#CDCDCD</color>
+    <color name="text_selected">#369E5C</color>
+    <color name="text_unselected">#909090</color>
+    <color name="text_title_selected">#2673C8</color>
+    <color name="text_title_unselected">#959595</color>
+    <color name="bg_tabhost">#EEEEEE</color>
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="green">#008000</color>
+    <color name="blue">#35b6f9</color>
+    <color name="gray">#717171</color>
+    <color name="red">#ffff0000</color>
+    <color name="color_qianhui">#ff888b8d</color>
+    <color name="text_gray">#909090</color>
+    <color name="text_black">#4a4a4a</color>
+    <color name="semi_transparent">#7f000000</color>
+    <color name="text_hint_gray">#9b9b9b</color>
+    <color name="text_white">#fff4fe</color>
+    <color name="text_login_black">#373737</color>
+    <color name="dlg_btn_pressed">#44a573</color>
+    <color name="dlg_btn_unpressed">#5ac995</color>
+    <color name="paint_background_color">#F2F3F5</color>
+    <color name="paint_line_1">#ECECEA</color>
+    <color name="paint_line_2">#E1E0D7</color>
+      
+</resources>

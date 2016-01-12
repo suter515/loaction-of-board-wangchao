@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/bg_tabhost"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/imgbtn_map"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_map_location" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_mapoffline"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/btn_map_offline" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tvw_distance_auxiliary"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="left"
+                android:text="距离"
+                android:textColor="@color/red"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edt_search_badid"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:hint="输入查找的板子号"
+                android:textColor="@color/red"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/imgbtn_search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_search" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_auxiliaryfun_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/green" >
+    </FrameLayout>
+
+</LinearLayout>
