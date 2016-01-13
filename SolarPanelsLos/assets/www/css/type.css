@@ -1,0 +1,16 @@
+body{
+	font-family: sans-serif;
+}
+h1,h3,h4{
+	color: yellow;
+}
+
+p{
+	color: maroon;
+}
+em{
+	font-family: serif;
+}
+p.mycontry{
+	color: #800000;
+}

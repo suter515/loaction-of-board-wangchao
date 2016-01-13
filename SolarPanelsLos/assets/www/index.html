@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head lang="en">
+<!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        -->
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<!-- removing , width=device-width, height=device-height, target-densitydpi=device-dpi -->
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" type="text/css" href="css/type.css">
+<title>Hello World</title>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+	// Wait for device API libraries to load    
+	//    
+	document.addEventListener("deviceready", onDeviceReady, false);
+	// device APIs are available    
+	//    
+	function onDeviceReady() {
+		// Empty    
+	}
+	// Show a custom alert    
+
+	//    native的 Dialog 对话框
+	function showAlert() {
+		navigator.notification.alert('You are the winner!', // message            
+		'Game Over',
+		// title            
+		'Done'
+		// buttonName        
+		);
+	}
+	// Beep three times    
+	//    响铃3声
+	function playBeep() {
+		navigator.notification.beep(3);
+	}
+	// Vibrate for 2 seconds    
+	//    振动
+	function vibrate() {
+		navigator.notification.vibrate(100000);
+	}
+	//取消震动
+	function cancelVibrate() {
+		navigator.notification.vibrate(0);
+	}
+	//	     跳转
+	function intent() {
+
+		navigator.intent.demo('NDljY2E1ZGM4NzUzM2U3Yg==,order,5740');
+
+	} //token,eneityname,entityid
+	function funcallback() {
+		navigator.app.exitApp;
+	}
+</script>
+</head>
+<body>
+	<div class="app">
+		<h1>Apache Cordova</h1>
+		<div id="deviceready" class="blink">
+			<p class="event listening">Connecting to Device</p>
+			<p class="event received">Device is Ready</p>
+		</div>
+	</div>
+
+	<button onclick="funcallback">返回</button>
+	<br />
+	<h4>"添加板子信息"</h4>
+	位置经度：
+	<input type="number" />
+	<br /> 位置纬度：
+	<input type="number" />
+	<br /> 板子型号：
+	<input type="number" />
+	<br /> 生产厂家：
+	<input type="text" />
+	<br />
+	<input type="submit" id="subdevice" value="提交" />
+	<br />
+
+	<h4>'导入数据文件'</h4>
+	<input type="search" name="" required="" placeholder="Search"
+		x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh-CN">
+	<input type="submit" id="sub2" name="确定" />
+
+
+
+
+	<p>
+		<a href="#" onclick="showAlert(); return false;">Show Alert</a>
+	</p>
+	<p>
+		<a href="#" onclick="playBeep(); return false;">Play Beep</a>
+	</p>
+	<p>
+		<a href="#" onclick="vibrate(); return false;">Vibrate</a>
+	</p>
+	<p>
+		<a href="#" onclick="intent(); return false;">Upload Image</a>
+	</p>
+	<p>
+		<a href="#" onclick="cancelVibrate();return false;">cancelVibrate</a>
+	<p />
+</body>
+</html>

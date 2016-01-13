@@ -168,6 +168,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+		Intent intent=new Intent();
 		
 		switch (v.getId()) {
 		case R.id.imgbtn_app:
@@ -182,7 +183,8 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			
 			break;
 case R.id.imgbtn_setting:
-			
+	intent.setClass(MainActivity.this, SettingActivity.class);
+	startActivity(intent);
 			break;
 		default:
 			break;
