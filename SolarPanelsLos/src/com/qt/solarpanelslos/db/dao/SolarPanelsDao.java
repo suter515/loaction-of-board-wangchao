@@ -14,7 +14,7 @@ import com.qt.solarpanelslos.utils.TimeUtils;
 
 public class SolarPanelsDao {
 	
-private static String fields []={"_id","boardId","lat","lng","formFactory"};
+private static String fields []={"_id","boardId","lat","lng","fromFactory"};
 private static String[] fields_up ={"boardId","lat","lng","formFactory"};
 
 /**
@@ -119,6 +119,51 @@ public static ArrayList<SolarPanelsLocation> querySolarPanelsLocationList(Contex
 /**
  * 查询OrdinaryFamilyCensus表 返回list
  */
+public static ArrayList<SolarPanelsLocation> querySolarPanelsLocationListBybodID(Context context, String id) {
+	ArrayList<SolarPanelsLocation> list1 = new ArrayList<SolarPanelsLocation>();
+
+	DBAdapter dbAdapter = null;
+	try {
+		dbAdapter = new DBAdapter(context);
+		String strWhere = "";
+		if (id != null && !id.equals("")) {
+			strWhere = " where boardId=?";
+		}
+		// 查询OrdinaryFamilyCensus
+		String sql = "select * from SolarPanelsLos" + strWhere;
+
+		String[] args;
+		if (id != null && !id.equals("")) {
+			args = new String[] { id };
+		} else {
+			args = new String[] {};
+		}
+		
+		Cursor cursor = dbAdapter.select(sql, args);
+		SolarPanelsLocation obj;
+		while (cursor.moveToNext()) {
+			obj = new SolarPanelsLocation();
+			obj.setId(cursor.getInt(0));
+			obj.setBoardId(cursor.getString(1));
+			obj.setLat(Double.valueOf(cursor.getString(2)).doubleValue());
+			obj.setLng(Double.valueOf(cursor.getString(3)).doubleValue());
+			obj.setFormFactory(cursor.getString(4));
+
+			list1.add(obj);
+		}
+		cursor.close();
+	} catch (Exception ex) {
+		LogUtils.i("SolarPanelsDao querySolarPanelsLocationList===", ex.toString());
+	} finally {
+		if (dbAdapter != null)
+			dbAdapter.close();
+	}
+	return list1;
+}
+
+/**
+ * 查询OrdinaryFamilyCensus表 返回list
+ */
 public static ArrayList<SolarPanelsLocation> querySolarPanelsLocationList(Context context, String flag,
 		int start, int count) {
 	ArrayList<SolarPanelsLocation> list1 = new ArrayList<SolarPanelsLocation>();
@@ -166,6 +211,7 @@ public static long insertSolarPanelsLocation(Context context, SolarPanelsLocatio
 		dbAdapter = new DBAdapter(context);
 		String[] values = { null, dto.getBoardId(), Double.toString(dto.getLat()), Double.toString(dto.getLng()), dto.getFormFactory()};
 		n = dbAdapter.insert("SolarPanelsLos", fields, values);
+		LogUtils.e("sjt", "insertSolarPanelsLocation");
 	} catch (Exception ex) {
 		LogUtils.i("SolarPanelsDao insertSolarPanelsLocation===", ex.toString());
 	} finally {

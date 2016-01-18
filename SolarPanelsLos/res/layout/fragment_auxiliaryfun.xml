@@ -42,25 +42,9 @@
                 android:textColor="@color/red"
                 android:textSize="16sp" />
 
-            <EditText
-                android:id="@+id/edt_search_badid"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:hint="输入查找的板子号"
-                android:textColor="@color/red"
-                android:textSize="16sp" />
+           
         </RelativeLayout>
 
-        <ImageButton
-            android:id="@+id/imgbtn_search"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/btn_search" />
     </LinearLayout>
 
     <FrameLayout

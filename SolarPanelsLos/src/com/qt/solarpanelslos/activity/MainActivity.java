@@ -1,6 +1,7 @@
 package com.qt.solarpanelslos.activity;
 
 import java.util.Stack;
+import java.util.zip.Inflater;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -10,8 +11,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
@@ -64,11 +67,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 				registerReceiver(mReceiver, iFilter);
 				//
 		setContentView(R.layout.main_activity);
-		ImageButton imgbtnApp=(ImageButton)findViewById(R.id.imgbtn_app);
-		imgbtnApp.setOnClickListener(this);
-		ImageButton imgbtnSet=(ImageButton)findViewById(R.id.imgbtn_setting);
-		imgbtnSet.setOnClickListener(this);
-		slidraw = (LinearLayout)findViewById(R.id.ll_slidingdraw);
+		initview();
 		// 初始化过程中设置了root fragment
 		mFragMgr = HFragmentManager.instance(this, R.id.fl_map, AuxiliaryFunFragment.class.getSimpleName());
 		if (savedInstanceState != null) {
@@ -92,6 +91,20 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		getWindow().getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
 		AppContext.getInstance().setScreenWidth(outMetrics.widthPixels);
 		LogUtils.d("MainActivity", "Density : "+PhoneUtils.getScreenDensity(this)+"width:"+outMetrics.widthPixels+"  height:"+outMetrics.heightPixels);
+	}
+
+	private void initview() {
+		// TODO Auto-generated method stub
+		ImageButton imgbtnApp=(ImageButton)findViewById(R.id.imgbtn_app);
+		imgbtnApp.setOnClickListener(this);
+		ImageButton imgbtnSet=(ImageButton)findViewById(R.id.imgbtn_setting);
+		imgbtnSet.setOnClickListener(this);
+		LayoutInflater inflater=LayoutInflater.from(MainActivity.this);
+		slidraw = (LinearLayout)findViewById(R.id.ll_slidingdraw);
+		View view=inflater.inflate(R.layout.view_slidraw, slidraw,true);
+		
+		Button btnHelp=(Button)view.findViewById(R.id.btn_help);
+		btnHelp.setOnClickListener(this);
 	}
 
 	/* 从状态中初始化 */
@@ -183,9 +196,17 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			
 			break;
 case R.id.imgbtn_setting:
-	intent.setClass(MainActivity.this, SettingActivity.class);
+	intent.setClass(MainActivity.this, TestActivity.class);
+//	intent.setClass(MainActivity.this, SettingActivity.class);
 	startActivity(intent);
 			break;
+case R.id.btn_help:
+	intent.setClass(MainActivity.this, UseHelpActivity.class);
+	startActivity(intent);
+	break;
+			
+			
+			
 		default:
 			break;
 		}

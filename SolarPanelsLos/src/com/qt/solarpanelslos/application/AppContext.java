@@ -20,7 +20,6 @@ public class AppContext extends Application {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
-		//SDKInitializer.initialize(this);
 		mInstance = this;
 		SDKInitializer.initialize(mInstance);
 		// 创建数据库

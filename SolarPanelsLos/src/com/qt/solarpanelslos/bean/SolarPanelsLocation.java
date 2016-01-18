@@ -47,10 +47,9 @@ public class SolarPanelsLocation {
 		this.fromFactory = formFactory;
 	}
 
-	public SolarPanelsLocation(int id, String boardId, double lat, double lng,
+	public SolarPanelsLocation( String boardId, double lat, double lng,
 			String formFactory) {
 		super();
-		this._id = id;
 		this.boardId = boardId;
 		this.lat = lat;
 		this.lng = lng;

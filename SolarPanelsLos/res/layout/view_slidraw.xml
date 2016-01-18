@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_check"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:layout_width="120dp"
+        style="@style/Text20BlackFont"
+        android:background="@color/green"
+        android:text="版本更新" />
+
+    <Button
+        android:id="@+id/btn_help"
+        android:layout_width="120dp"
+        style="@style/Text20BlackFont"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@color/green"
+        android:text="使用帮助" />
+
+    <Button
+        android:id="@+id/btn_law"
+        android:layout_width="120dp"
+        style="@style/Text20BlackFont"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@color/green"
+        android:text="法律声明" />
+
+    <Button
+        android:id="@+id/btn_FAQ"
+        android:layout_width="120dp"
+        style="@style/Text20BlackFont"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@color/green"
+        android:text="常见问题" />
+
+</LinearLayout>

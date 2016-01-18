@@ -48,9 +48,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="25dp"
+        android:layout_marginRight="5dp"
         android:layout_marginTop="10dp" />
-    <!--  
+    <!--
     <TextView
         android:id="@+id/tvw_distance"
         android:layout_width="wrap_content"
@@ -61,18 +61,38 @@
         android:text="距离"
          android:layout_marginRight="95dp"
         android:layout_marginTop="20dp" />
-        --> 
+    -->
+
     <Button
-          android:id="@+id/btn_reset"
+        android:id="@+id/btn_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_marginRight="75dp"
+        android:layout_marginTop="10dp"
         android:layout_toLeftOf="@+id/button1"
-        android:text="重置"
-         android:layout_marginRight="95dp"
-        android:layout_marginTop="10dp" />
-        
-    
+        android:text="重置" />
+
+    <EditText
+        android:id="@+id/edt_search_badid"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:singleLine="false"
+        android:hint="输入查找的板子号,以；隔开"
+        android:textColor="@color/red"
+        android:textSize="10sp" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_search"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/edt_search_badid"
+        android:background="@drawable/btn_search" />
 
 </RelativeLayout>
